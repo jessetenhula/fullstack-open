@@ -71,12 +71,11 @@ const App = () => {
 
   const removePerson = id => {
     const removePersonName = persons.find(p => p.id === id).name
-
     if (window.confirm(`Are you sure you want to delete ${removePersonName}`)) {
       personService
         .remove(id)
         .then((response) => {
-          displayNotification(`Deleted person "${response.name}"`, "notification")
+          displayNotification(`Deleted person "${removePersonName}"`, "notification")
         })
         .catch(error => {
           displayNotification(`Could not delete Person "${removePersonName}" because they have already been deleted`, "notification error")
