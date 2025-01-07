@@ -1,0 +1,25 @@
+body {
+  color: #333;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.search-bar input {
+  margin-left: 1rem;
+}
+
+.country-container ul:first-of-type {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.country-container ul li {
+  margin-bottom: 0.25rem;
+}
+
+.country-flag {
+  font-size: 5rem;
+}
+
+.weather-container p {
+  margin-block: 0;
+}
