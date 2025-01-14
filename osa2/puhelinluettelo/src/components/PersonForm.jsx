@@ -3,8 +3,8 @@ const PersonForm = ({ handleNameChange, handleNumberChange, handleClick, newName
         <form className="person-form">
             <h3>Add new</h3>
             <div>
-                name: <input type="tel" onChange={handleNameChange} value={newName} />
-                number: <input onChange={handleNumberChange} value={newNumber} />
+                name: <input onChange={handleNameChange} value={newName} />
+                number: <input type="tel" onChange={handleNumberChange} value={newNumber} />
                 <button type="submit" onClick={handleClick}>add</button>
             </div>
         </form>
