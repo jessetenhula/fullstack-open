@@ -16,7 +16,7 @@ blogsRouter.post('/', userExtractor, (request, response, next) => {
   const blog = new Blog(request.body)
   const user = request.user
 
-  if (!user._id) {
+  if (!user) {
     return response.status(401).json({ error: 'invalid token' })
   }
 
@@ -27,7 +27,9 @@ blogsRouter.post('/', userExtractor, (request, response, next) => {
   blog.user = user._id
   user.blogs = user.blogs.concat(blog._id)
   return Promise.all([blog.save(), user.save()])
-  .then(([savedBlog, savedUser]) => {
+  .then(results => {
+    return results[0].populate('user', { username: 1, name: 1, id: 1 })
+  }).then(savedBlog => {
     response.status(201).json(savedBlog)
   })
   .catch(error => next(error))
@@ -37,7 +39,7 @@ blogsRouter.delete('/:id', userExtractor, async (request, response, next) => {
   try {
     const user = request.user
   
-    if (!user._id) {
+    if (!user) {
       return response.status(401).json({ error: 'invalid token' })
     }
 
@@ -67,7 +69,8 @@ blogsRouter.put('/:id', async (request, response, next) => {
   }
 
   try {
-    const newBlog = await Blog.findByIdAndUpdate(request.params.id, blog, { new: true, runValidators: true, context: 'query' })
+    const newBlog = await Blog.findByIdAndUpdate(request.params.id, blog, { new: true, runValidators: true, context: 'query' }).populate('user', { username: 1, name: 1, id: 1 })
+    
     response.json(newBlog)
   } catch (exception) {
     next(exception)

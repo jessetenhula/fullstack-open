@@ -18,6 +18,10 @@ const errorHandler = (error, request, response, next) => {
   next(error)
 }
 
+const unknownEndpoint = (request, response) => {
+  response.status(404).send({ error: 'unknown endpoint' })
+}
+
 const tokenExtractor = (request, response, next) => {
   const authorization = request.get('authorization')
 
@@ -40,6 +44,7 @@ const userExtractor = async (request, response, next) => {
 
 module.exports = {
   errorHandler,
+  unknownEndpoint,
   tokenExtractor,
   userExtractor
 }
