@@ -1,0 +1,10 @@
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RpIiwiaWQiOiI2NzlkZjljOWM0YWM0MTI2NTMyZDFjNWUiLCJpYXQiOjE3Mzg0MDYzNjN9.jT4InXwhIAWvj44LftRw0sjJPrlV1tfPCFpgtYe3iS0
+
+{
+  "title": "bruhgingnewwithuser",
+  "author": "Jesdsdssse Tenhula",
+  "url": "bingussadfad-site.com",
+  "likes": -34
+}  

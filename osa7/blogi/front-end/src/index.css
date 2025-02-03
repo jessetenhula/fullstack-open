@@ -1,0 +1,276 @@
+:root {
+  --fs-title: 1.25rem;
+  --fs-large: 1.125rem;
+  --fs-medium: 1rem;
+  --fs-small: 0.875rem;
+}
+
+body {
+  color: #333;
+  margin: 0;
+  font-family: monospace;
+}
+
+h1 {
+  font-size: var(--fs-title);
+  color: #444;
+}
+
+h2 {
+  font-size: var(--fs-large);
+  font-weight: normal;
+  color: #444;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:active {
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
+}
+
+a:hover {
+  color: darkorchid;
+}
+
+.page-container {
+  width: clamp(300px, 70%, 800px);
+  margin: auto;
+}
+
+.login-form {
+    width: 50%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    background-color: mistyrose;
+    gap: 0.5rem;
+}
+
+.login-form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form input {
+  flex-grow: 1;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem;
+  color: darkorchid;
+}
+
+.login-form button {
+  justify-self: flex-end;
+  align-self: flex-end;
+}
+
+.blog-list {
+  font-size: var(--fs-large);
+  list-style-type: none;
+  padding: 0;
+}
+
+.blog-list li {
+  border-bottom: 1px solid #ccc;
+}
+
+.blog-list-item {
+  display: flex;
+  justify-content: right;
+  padding: 0.5rem;
+  transition: color 0.2s;
+}
+
+.blog-list-item:hover {
+  text-decoration: none;
+  color: darkorchid;
+}
+
+.blog-list-item:hover span:last-of-type {
+  color: darkorchid;
+}
+
+.blog-list li:nth-child(odd) {
+  background-color: inherit;
+}
+
+.blog-list-item span:last-of-type {
+  font-size: var(--fs-small);
+  color: #666;
+  margin-left: auto;
+}
+
+
+
+.blog-form-container {
+  background-color: mistyrose;
+  border-top: 2px solid lightpink;
+  padding: 1rem;;
+  color: palevioletred
+}
+
+.blog-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.blog-form input {
+  width: 75%;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem;
+  color: darkorchid;
+}
+
+.blog-form label {
+  display: inline-block;
+  min-width: 5rem;
+}
+
+.blog-form button {
+  justify-self: flex-end;
+  align-self: flex-end;
+}
+
+.comment-form {
+  margin-block: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: mistyrose;
+}
+
+.comment-form input {
+  flex-grow: 1;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem;
+  color: darkorchid;
+}
+
+.comment-form label {
+  color: #444;
+}
+
+.comment-form button {
+  min-width: 3rem;
+}
+
+.togglable-container > button {
+  min-width: 10rem;
+}
+
+.blog-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-title span:last-child {
+  color: #666;
+  font-weight: normal;
+  font-size: var(--fs-large)
+}
+
+.blog-details {
+  font-size: var(--fs-small);
+  list-style-type: none;
+  padding-left: 2rem;
+  margin-block: 1.5rem;
+}
+
+.blog-details li {
+  margin-block: 0.5rem;
+}
+
+.blog-like-button {
+  margin-left: 1rem;
+}
+
+.blog-comments-list {
+  list-style-type: '> ';
+  font-size: var(--fs-small);
+}
+
+.blog-comments-list li {
+  margin-block: 0.5rem;
+}
+
+table {
+  font-size: var(--fs-small);
+  width: 100%;
+  margin: auto;
+  text-align: left;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+}
+
+header {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 4rem;
+  border-bottom: 1px solid #ccc;
+  color: #666;
+}
+
+header * {
+  flex-shrink: 0;
+}
+
+header nav {
+  margin-right: auto;
+  display: flex;
+  gap: 0.5rem;
+  font-size: var(--fs-large);
+}
+
+header span:first-of-type {
+  text-wrap: nowrap;
+  overflow: hidden;
+  flex-shrink: 1;
+}
+
+button {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: var(--fs-small);
+  padding: 0.25rem;;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid lightpink;
+  border-radius: 0;
+  box-shadow: 2px 2px 0 lightpink;
+  cursor: pointer;
+}
+
+button:hover {
+  color: darkorchid;
+}
+
+@media screen and (max-width: 700px) {
+  .page-container {
+    width: 95%;
+  }
+ 
+  .blog-list-item {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+  }
+
+  .blog-list-item span:last-of-type {
+    margin-left: 0;
+  }
+}
