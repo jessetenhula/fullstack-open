@@ -1,5 +1,5 @@
 import { useCreateComment } from '../hooks/comments'
-import { useDisplayNotification } from '../NotificationContext'
+import { useDisplayNotification } from '../contexts/NotificationContext'
 
 const CommentForm = ({ blogId }) => {
   const newCommentMutation = useCreateComment()

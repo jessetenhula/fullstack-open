@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { useNotificationValue } from '../NotificationContext'
+import { useNotificationValue } from '../contexts/NotificationContext'
 
 const Notification = () => {
   const notification = useNotificationValue()

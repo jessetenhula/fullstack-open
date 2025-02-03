@@ -1,4 +1,4 @@
-import { useDisplayNotification } from '../NotificationContext'
+import { useDisplayNotification } from '../contexts/NotificationContext.jsx'
 import { useUpdateBlog, useDeleteBlog } from '../hooks/blogs.js'
 import { useNavigate } from 'react-router-dom'
 import CommentForm from './CommentForm'

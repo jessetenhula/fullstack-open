@@ -2,6 +2,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import blogService from '../services/blogs'
 
 export const blogsKey = ['blogs']
+export const userskey = ['users']
 
 export const useGetBlogs = () => {
   return useQuery({
@@ -18,6 +19,7 @@ export const useCreateBlog = () =>{
     mutationFn: blogService.createBlog,
     onSuccess: (newBlog) => {
       queryClient.setQueryData(blogsKey, blogs.concat(newBlog))
+      queryClient.invalidateQueries(userskey)
     }
   })
 }

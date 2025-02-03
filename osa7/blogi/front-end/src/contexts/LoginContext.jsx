@@ -14,26 +14,26 @@ const loginReducer = (state, action) => {
   }
 }
 
-const loginContext = createContext()
+const LoginContext = createContext()
 
 export const LoginContextProvider = (props) => {
   const [loggedInUser, loginDispatch] = useReducer(loginReducer, null)
 
   return (
-    <loginContext.Provider value={[loggedInUser, loginDispatch]}>
+    <LoginContext.Provider value={[loggedInUser, loginDispatch]}>
       {props.children}
-    </loginContext.Provider>
+    </LoginContext.Provider>
   )
 }
 
 export const useLoginValue = () => {
-  const userAndDispatch = useContext(loginContext)
+  const userAndDispatch = useContext(LoginContext)
   return userAndDispatch[0]
 }
 
 export const useLoginDispatch = () => {
-  const userAndDispatch = useContext(loginContext)
+  const userAndDispatch = useContext(LoginContext)
   return userAndDispatch[1]
 }
 
-export default loginContext
+export default LoginContext

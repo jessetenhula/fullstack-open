@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useDisplayNotification } from '../NotificationContext'
+import { useDisplayNotification } from '../contexts/NotificationContext'
 import { useCreateBlog } from '../hooks/blogs.js'
 
 const BlogForm = ({ toggleVisibility }) => {

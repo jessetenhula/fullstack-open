@@ -1,9 +1,9 @@
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
-import { NotificationContextProvider } from './NotificationContext'
+import { NotificationContextProvider } from './contexts/NotificationContext'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { LoginContextProvider } from './LoginContext'
+import { LoginContextProvider } from './contexts/LoginContext'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 const queryClient = new QueryClient()
