@@ -50,6 +50,7 @@ export const useDeleteBlog = () => {
         blogsKey,
         blogs.filter(blog => blog.id !== deletedBlog.id)
       )
+      queryClient.invalidateQueries(userskey)
     }
   })
 }
